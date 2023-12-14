@@ -1,12 +1,13 @@
 #include "monty.h"
 /**
- * f_pstr - prints the string starting at the top of the stack,
- * followed by a new
- * @head: stack head
+ * printstr -  at the top of the stack prints the string,
+ * followed with a new line
+ * @head: top of the stack
  * @counter: line_number
- * Return: no return
+ * Return: void returns 0
+ * authors : kyanzi Hassan and Thato
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void printstr(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;

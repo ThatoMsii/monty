@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
-  *f_nop- nothing
-  *@head: stack head
+  *doesnothing_function- nothing
+  *@head: top of the stack
   *@counter: line_number
-  *Return: no return
+  *Return: void so returns 0
  */
-void f_nop(stack_t **head, unsigned int counter)
+void doesnothing_function(stack_t **head, unsigned int counter)
 {
 	(void) counter;
 	(void) head;

@@ -5,22 +5,22 @@
 * @counter: line_counter
 * @file: poiner to monty file
 * @content: line content
-* Return: no return
+* Return: void so returns 0
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-				{"pop", f_pop},
+				{"pop", top_pop},
 				{"swap", f_swap},
 				{"add", f_add},
-				{"nop", f_nop},
+				{"nop", doesnothing_function},
 				{"sub", f_sub},
 				{"div", f_div},
-				{"mul", f_mul},
+				{"mul", toptwo_mul},
 				{"mod", f_mod},
 				{"pchar", f_pchar},
-				{"pstr", f_pstr},
+				{"pstr", printstr},
 				{"rotl", f_rotl},
 				{"rotr", f_rotr},
 				{"queue", f_queue},
