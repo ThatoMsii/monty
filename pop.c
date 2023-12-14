@@ -1,23 +1,24 @@
 #include "monty.h"
 /**
  * top_pop - prints the top elements
- * @head: top of the stack
- * @counter: line_number
+ * @newest: top of the stack
+ * @enumerate: line_number
  * Return: void returns 0
+ * Authors: Kyanzi and Thato
 */
-void top_pop(stack_t **head, unsigned int counter)
+void top_pop(stack_t **newest, unsigned int enumerate)
 {
 	stack_t *h;
 
-	if (*head == NULL)
+	if (*newest == NULL)
 	{
-		fprintf(stderr, "L%d: It is an empty stack we cant pop \n", counter);
+		fprintf(stderr, "L%d: It is an empty stack we cant pop \n", enumerate);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		free_stack(*newest);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	*head = h->next;
+	h = *newest;
+	*newest = h->next;
 	free(h);
 }

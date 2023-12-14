@@ -9,9 +9,9 @@
 * We allowed to use a maximum of one global variable
 * No more than 5 functions per file
 * We are allowed to use the C standard library
-* The prototypes of all your functions should be included in your header file called monty.h
-* We shouldn't forget to push our header file
-* All our header files should be include guarded
+* The prototypes of all your functions should be included in your newester file called monty.h
+* We shouldn't forget to push our newester file
+* All our newester files should be include guarded
 * We are expected to do the tasks in the order shown in the project
 * Style guidelines: [Betty style] (https://github.com/holbertonschool/Betty/wiki)
 

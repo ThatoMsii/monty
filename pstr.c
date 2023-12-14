@@ -2,17 +2,17 @@
 /**
  * printstr -  at the top of the stack prints the string,
  * followed with a new line
- * @head: top of the stack
- * @counter: line_number
+ * @newest: top of the stack
+ * @enumerate: line_number
  * Return: void returns 0
  * authors : kyanzi Hassan and Thato
 */
-void printstr(stack_t **head, unsigned int counter)
+void printstr(stack_t **newest, unsigned int enumerate)
 {
 	stack_t *h;
-	(void)counter;
+	(void)enumerate;
 
-	h = *head;
+	h = *newest;
 	while (h)
 	{
 		if (h->n > 127 || h->n <= 0)

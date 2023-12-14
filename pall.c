@@ -1,16 +1,17 @@
 #include "monty.h"
 /**
- * f_pall - prints the stack
- * @head: top of the stack
- * @counter: no used
+ * fun_printall - prints all the values on the stack
+ * @newest: top of the stack
+ * @enumerate: no used
  * Return: void so returns 0
+ * Author : Kyanzi and Thato
 */
-void f_pall(stack_t **head, unsigned int counter)
+void fun_printall(stack_t **newest, unsigned int enumerate)
 {
 	stack_t *h;
-	(void)counter;
+	(void)enumerate;
 
-	h = *head;
+	h = *newest;
 	if (h == NULL)
 		return;
 	while (h)

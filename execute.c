@@ -1,29 +1,29 @@
 #include "monty.h"
 /**
 * execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
+* @stack: newest linked list - stack
+* @enumerate: line_enumerate
 * @file: poiner to monty file
 * @content: line content
 * Return: void so returns 0
 */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int enumerate, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"push", pusher}, {"pall", fun_printall}, {"pint", top_int},
 				{"pop", top_pop},
-				{"swap", f_swap},
-				{"add", f_add},
+				{"swap", swapper_fun},
+				{"add", adder_f},
 				{"nop", doesnothing_function},
-				{"sub", f_sub},
-				{"div", f_div},
+				{"sub", topelementsub_fun},
+				{"div", div_f},
 				{"mul", toptwo_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
+				{"mod", mod_rem},
+				{"pchar", print_char},
 				{"pstr", printstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},
-				{"queue", f_queue},
+				{"rotl", rotl_t},
+				{"rotr", rotr_f},
+				{"queue", queue_fr},
 				{"stack", f_stack},
 				{NULL, NULL}
 				};
@@ -37,13 +37,13 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, counter);
+		{	opst[i].f(stack, enumerate);
 			return (0);
 		}
 		i++;
 	}
 	if (op && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", enumerate, op);
 		fclose(file);
 		free(content);
 		free_stack(*stack);
