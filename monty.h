@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #ifndef MONTY_H
 #define MONTY_H
 #include <stdio.h>
@@ -7,12 +8,11 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-
 /**
- * struct stack_s - doubly linked list of a stack.
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the stack
- * @next: points to the nest elemnt of the stack
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
@@ -29,8 +29,7 @@ typedef struct stack_s
  * @file: pointer to monty file
  * @content: line content
  * @lifi: flag change stack <-> queue
- *
- * Description: carries value through the program
+ * Description: carries values through the program
  */
 typedef struct bus_s
 {
@@ -38,15 +37,15 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-} bus_t;
+}  bus_t;
 extern bus_t bus;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
- * Description: opcode and its function for stack,
- * queues, LIFO, FIFO Holberton project
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
@@ -55,7 +54,7 @@ typedef struct instruction_s
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char *clean_line(char *content);
+char  *clean_line(char *content);
 void f_push(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
@@ -77,5 +76,4 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
-
 #endif
